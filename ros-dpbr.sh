@@ -9,8 +9,9 @@ wget --no-check-certificate -c -O CN.txt https://raw.githubusercontent.com/mayax
 echo "/ip firewall address-list"
 
 for net in $(cat CN.txt) ; do
-  echo "add list=CN address=$net comment=AS4809"
+  echo "add list=china-ip address=$net comment=AS4809"
 done
+echo "add list=china-ip address=192.168.88.0/24 comment=Local"
 
 } > ../CN.rsc
 
